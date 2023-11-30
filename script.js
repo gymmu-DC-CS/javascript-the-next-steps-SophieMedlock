@@ -14,11 +14,14 @@ export function exercise02(args){
 }
 export function exercise03(args){
    const input = args
+   
    const result = []
   for (let i = 0; i < input.length; i++){
     const inputElement = input[i]
-    if (inputElement === "e") 
-    result.push
+    if (inputElement === "e")
+    inputElement.textContent = parseInt(inputElement.textContent) + 1 
+    result.push(inputElement)
   }
-  
+
+return result.join("")  
 }
