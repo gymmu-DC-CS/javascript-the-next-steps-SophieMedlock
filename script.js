@@ -49,16 +49,32 @@ export function exercise05(args) {
 }
 export function exercise06(args) {
   const input = args
-  for (let i = 0; i < input.length; i++) {
+  for (let i = 3; i < input.length; i++) {
     const specialCharacter = input[i].charCodeAt()
     if (
       (specialCharacter >= 33 && specialCharacter <= 47) ||
       (specialCharacter >= 58 && specialCharacter <= 64) ||
+      (specialCharacter >= 91 && specialCharacter <= 96) ||
       (specialCharacter >= 123 && specialCharacter <= 126)
     ) {
       return true
     }
   }
-
+  return false
+}
+export function exercise07(args) {
+  const input = args
+  for (let i = 3; i < input.length; i++) {
+    const andInText = input[i]
+    const previousElement = input[i - 1]
+    const previousDoubleElement = input[i - 2]
+    if (
+      andInText === "d" &&
+      previousElement === "n" &&
+      previousDoubleElement === "a"
+    ) {
+      return true
+    }
+  }
   return false
 }
