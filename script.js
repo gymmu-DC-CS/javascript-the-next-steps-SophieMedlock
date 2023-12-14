@@ -40,10 +40,25 @@ export function exercise04(args) {
 export function exercise05(args) {
   const input = args
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i].charCodeAt()
-    if (currentElement >= 65 && currentElement <= 90) {
+    const capitalLetter = input[i].charCodeAt()
+    if (capitalLetter >= 65 && capitalLetter <= 90) {
       return true
     }
   }
+  return false
+}
+export function exercise06(args) {
+  const input = args
+  for (let i = 0; i < input.length; i++) {
+    const specialCharacter = input[i].charCodeAt()
+    if (
+      (specialCharacter >= 33 && specialCharacter <= 47) ||
+      (specialCharacter >= 58 && specialCharacter <= 64) ||
+      (specialCharacter >= 123 && specialCharacter <= 126)
+    ) {
+      return true
+    }
+  }
+
   return false
 }
