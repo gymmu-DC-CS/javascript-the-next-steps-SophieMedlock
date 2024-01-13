@@ -25,6 +25,7 @@ export function exercise03(args) {
   }
   return count
 }
+//The function counts the spaces in a text.
 export function exercise04(args) {
   const input = args
   let count = 0
@@ -62,16 +63,22 @@ export function exercise06(args) {
   }
   return false
 }
+//I have programmed the function so that it looks for the word "and" with a space before and after the word, because in English,
+//"and" always has to have a space before and after it. This way, I avoided words like "hand".
 export function exercise07(args) {
   const input = args
-  for (let i = 3; i < input.length; i++) {
+  for (let i = 1; i < input.length; i++) {
     const andInText = input[i]
     const previousElement = input[i - 1]
-    const previousDoubleElement = input[i - 2]
+    const nextElement = input[i + 1]
+    const spaceBefore = input[i - 2]
+    const spaceAfter = input[i + 2]
     if (
-      andInText === "d" &&
-      previousElement === "n" &&
-      previousDoubleElement === "a"
+      andInText === "n" &&
+      previousElement === "a" &&
+      nextElement === "d" &&
+      spaceBefore === " " &&
+      spaceAfter === " "
     ) {
       return true
     }
